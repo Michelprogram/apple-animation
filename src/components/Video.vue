@@ -1,34 +1,30 @@
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  mounted() {
-    //this.$refs.video.play()
-  },
-});
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div>
+  <div class="container-video">
     <video autoplay muted width="250" ref="video">
       <source src="../../public/large.mp4" type="video/mp4" />
     </video>
   </div>
+  <div class="fake-container"></div>
 </template>
 
 <style lang="scss" scoped>
-
-div {
+.container-video {
   position: absolute;
-  top:45px;
-  left:0;
+  top: 45px;
+  left: 0;
   width: 100%;
   height: 800px;
-  z-index: 0;
+  z-index: -1;
+
+  video{
+    object-fit: fill;
+    width: 100%;
+  }
 }
 
-video {
-  object-fit: fill;
-  width: 100%;
+.fake-container{
+    height: 700px;
 }
 </style>

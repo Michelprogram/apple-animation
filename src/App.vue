@@ -4,18 +4,20 @@
 import Header from "./components/Header.vue";
 import Modeles from "./components/Modeles.vue";
 import Video from "./components/Video.vue";
+import Text from "./components/Text.vue";
 </script>
 
 <template>
   <Header class="container"/>
   <Modeles class="container"/>
   <Video />
+  <Text />
 </template>
 
 <style scoped lang="scss">
 .container{
   margin-bottom:1%;
-  
+
   &:nth-child(2){
     position: relative;
   }
