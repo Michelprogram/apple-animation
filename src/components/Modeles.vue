@@ -25,20 +25,43 @@
 <style scoped lang="scss">
 
 @use "../assets/index.scss" as color;
+
 $little-font-size:0.75em;
 $gray-opacity:0.64;
+
+@mixin swapcolors($opacity){
+    color: color.$header-color;
+    opacity: $opacity;
+
+    animation-duration: 3s;
+    animation-name: colorSwap;
+
+    @keyframes colorSwap{
+        0%{
+            color:white;
+        }
+        58%{
+            color: white;
+        } 
+        100%{
+            color: color.$header-color;
+        }
+    }
+}
 
 .container-header-2 {
   margin: auto;
   width: 70%;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 
   &>div:nth-child(1){
     font-size: $little-font-size;
-    opacity: $gray-opacity;
-    color:color.$header-color;
     line-height: 20px;
+
+    @include swapcolors($gray-opacity);
+
   }
 
   .informations{
@@ -48,8 +71,10 @@ $gray-opacity:0.64;
 
     &>div:nth-child(1){
         font-size: 1.3em;
-        color:color.$header-color;
         width: 30%;
+
+        @include swapcolors(1);
+
     }
 
     &>div:nth-child(2){
@@ -61,10 +86,12 @@ $gray-opacity:0.64;
         width: 42%;
 
         &>p:nth-child(1){
-            opacity: $gray-opacity;
+            @include swapcolors($gray-opacity);
         }
 
         &>p:nth-child(n+2){
+            @include swapcolors(1);
+
             &:hover{
                 color:color.$header-blue-button;
             }
@@ -90,4 +117,6 @@ $gray-opacity:0.64;
     background-color: rgba(128, 128, 128, 0.291);
   }
 }
+
+
 </style>
