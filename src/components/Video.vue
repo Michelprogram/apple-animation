@@ -25,6 +25,6 @@
 }
 
 .fake-container{
-    height: 700px;
+    height: 800px;
 }
 </style>
