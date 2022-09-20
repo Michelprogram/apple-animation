@@ -38,7 +38,7 @@ export default defineComponent({
     },
   },
   methods: {
-    scrollEvents(e: Event) {
+    scrollEvents(_: Event) {
       //Arrivé à 1500 l'animation se déclenche
 
       if (window.scrollY >= 1500) {
