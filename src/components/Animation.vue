@@ -13,6 +13,7 @@ export default defineComponent({
   },
   mounted() {
     this.preloadImage;
+    //@ts-ignore
     this.canvas = this.$refs.canvas.getContext("2d");
     this.updateImage;
     window.addEventListener("scroll", this.scrollEvents);
@@ -28,6 +29,7 @@ export default defineComponent({
       }
     },
     updateImage() {
+      //@ts-ignore
       this.canvas.drawImage(this.images[this.offset], 0, 0);
     },
     appearText() {
@@ -173,7 +175,8 @@ export default defineComponent({
         align-self: center;
         margin-left: 5%;
         font-size: 1.1em;
-        transition: opacity 2.15s 0.15s, transform 3.15s cubic-bezier(0, 0, 0.2, 1) 0.15s;
+        transition: opacity 2.15s 0.15s,
+          transform 3.15s cubic-bezier(0, 0, 0.2, 1) 0.15s;
       }
     }
 
